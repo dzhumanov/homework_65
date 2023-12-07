@@ -18,8 +18,8 @@ const Toolbar: React.FC = () => {
   const sortedArray = ["home", ...pages.filter((page) => page !== "home")];
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+      <div className="container-fluid w-75">
         <NavLink to="/" className="navbar-brand">
           Homework 65
         </NavLink>
@@ -31,6 +31,11 @@ const Toolbar: React.FC = () => {
               </NavLink>
             </li>
           ))}
+          <li className="nav-item">
+            <NavLink to="/admin" className="nav-link">
+              Admin
+            </NavLink>
+          </li>
           <li className="nav-item">
             <NavLink to="/new-page" className="nav-link">
               New page

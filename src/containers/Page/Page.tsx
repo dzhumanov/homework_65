@@ -31,12 +31,12 @@ const Page = () => {
 
   return (
     <>
-      <div>
+      <div className="container w-75">
         {loading && <Preloader />}
         {content && (
           <>
-            <h1>{content.title}</h1>
-            <p>{content.content}</p>
+            <h1 className="fw-bold text-center mt-3">{content.title}</h1>
+            <p className="fs-3 text-center ">{content.content}</p>
           </>
         )}
       </div>

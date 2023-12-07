@@ -59,11 +59,11 @@ const Admin: React.FC = () => {
 
   return (
     <>
-      <div>
+      <div className="container w-75">
         {loading && <Preloader />}
-        <h1>Edit pages</h1>
+        <h1 className="text-center mt-3">Edit pages</h1>
         <Form onSubmit={onSubmit}>
-          <Form.Group controlId="select" className="mt-3">
+          <Form.Group controlId="select" className="mt-3 fs-3">
             <Form.Label>Select page:</Form.Label>
             <Form.Select
               name="pages"
@@ -76,7 +76,7 @@ const Admin: React.FC = () => {
               <option value="contacts">Contacts</option>
             </Form.Select>
           </Form.Group>
-          <Form.Group controlId="author">
+          <Form.Group controlId="author" className="fs-3">
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
@@ -86,7 +86,7 @@ const Admin: React.FC = () => {
               value={content.title}
             />
           </Form.Group>
-          <Form.Group className="mt-4" controlId="textArea">
+          <Form.Group className="mt-4 fs-3" controlId="textArea">
             <Form.Label>Type new content</Form.Label>
             <Form.Control
               as="textarea"
