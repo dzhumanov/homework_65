@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { pageProps } from "../../types";
 import { useNavigate } from "react-router-dom";
 import axiosApi from "../../axiosApi";
+import Preloader from "../../components/Preloader/Preloader";
 
 const Admin: React.FC = () => {
   const [content, setContent] = useState<pageProps>({
@@ -59,6 +60,7 @@ const Admin: React.FC = () => {
   return (
     <>
       <div>
+        {loading && <Preloader />}
         <h1>Edit pages</h1>
         <Form onSubmit={onSubmit}>
           <Form.Group controlId="select" className="mt-3">
