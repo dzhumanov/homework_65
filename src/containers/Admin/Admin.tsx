@@ -12,7 +12,20 @@ const Admin: React.FC = () => {
   });
   const [loading, setLoading] = useState(false);
   const [selectedPage, setSelectedPage] = useState<string>("");
+  const [pages, setPages] = useState<string[]>([]);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axiosApi.get("pages.json");
+      const pageKeys = Object.keys(response.data);
+      setPages(pageKeys);
+    };
+
+    fetchData();
+  }, []);
+
+  const sortedArray = pages.filter((page) => page !== "home");
 
   const onChange = (
     event: React.ChangeEvent<
@@ -72,8 +85,9 @@ const Admin: React.FC = () => {
               value={selectedPage}
             >
               <option>Select a page</option>
-              <option value="about">About</option>
-              <option value="contacts">Contacts</option>
+              {sortedArray.map((page, index) => (
+                <option key={index} value={page}>{page}</option>
+              ))}
             </Form.Select>
           </Form.Group>
           <Form.Group controlId="author" className="fs-3">
