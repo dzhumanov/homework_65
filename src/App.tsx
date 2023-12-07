@@ -12,7 +12,7 @@ function App() {
       <main className="container-fluid">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pages/:page" element={<Page />} />
+          <Route path="/pages/:pageName" element={<Page />} />
         </Routes>
       </main>
     </>
